@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/homepage';
 import { AdminPage } from '../pages/adminpages/adminpage';
 import validUser from '../testdata/validuser.json';
-import { Utils } from '../Utils/utils'; 
+
 
 test('adminpage test', async ({ page }) => {
     await page.goto(validUser['valid user'].url);

@@ -10,7 +10,7 @@ test('homepage test', async ({ page }) => {
     await page.locator('button[type="submit"]').click();
 
     const homePage = new HomePage(page);
-    await Utils.scrollToBottom(page); // Scroll to the bottom of the page
+   // await Utils.scrollToBottom(page); // Scroll to the bottom of the page
     // const welcomeMessage = await homePage.getWelcomeMessage();
     // console.log('Welcome message:', welcomeMessage);
     // await expect(welcomeMessage).toBe('Dashboard');
