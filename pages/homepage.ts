@@ -13,6 +13,7 @@ export class HomePage {
     readonly directoryTab: Locator;
 readonly profileTab: Locator;
 readonly logoutButton: Locator;
+readonly searchInput: Locator;
 
 
 
@@ -26,8 +27,9 @@ readonly logoutButton: Locator;
         this.myInfoTab = page.getByText('My Info', { exact: true });
         this.performanceTab = page.getByText('Performance', { exact: true });
         this.directoryTab = page.getByText('Directory', { exact: true });
-        this.profileTab=page.getByText('Alex user', { exact: true });
+        this.profileTab=page.locator(".oxd-userdropdown-name");
         this.logoutButton = page.getByText('Logout', { exact: true });
+        this.searchInput = page.getByPlaceholder('Search');
     }
 async getWelcomeMessage() {
     return await this.page.getByRole('heading', { name: 'Dashboard' }).textContent();
@@ -66,6 +68,7 @@ async getWelcomeMessage() {
     };
 
     async logout() {
+        
         await this.profileTab.click();
         await this.logoutButton.click();
     }
