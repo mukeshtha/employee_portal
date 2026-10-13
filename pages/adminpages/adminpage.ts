@@ -13,12 +13,12 @@ export class AdminPage {
   
     constructor(page: Page) {
         this.page = page;
-            this.usermanagement = page.locator('.oxd-topbar-body-nav-tab-item').nth(0);
+        this.usermanagement = page.getByText('User Management', { exact: true });
         this.job = page.getByText('Job', { exact: true });
         this.organization = page.getByText('Organization', { exact: true });
         this.qualifications = page.getByText('Qualifications', { exact: true });
-        this.nationalities = page.getByRole('link', { name: 'Nationalities' })
-        this.corporatebranding = page.getByRole('link', { name: 'Corporate Branding' });
+        this.nationalities = page.getByText('Nationalities', { exact: true });
+        this.corporatebranding = page.getByText('Corporate Branding', { exact: true });
         this.configuration = page.getByText('Configuration', { exact: true });
     }
 async getWelcomeMessage() {
