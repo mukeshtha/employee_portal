@@ -17,7 +17,7 @@ export class AdminPage {
         this.usermanagement = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'User Management ' });
         this.job = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Job ' });
         this.organization = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Organization ' });
-        this.qualifications = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Qualifications ' });
+        this.qualifications = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Qualifications' });
         this.nationalities = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Nationalities ' });
         this.corporatebranding = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Corporate Branding ' });
         this.configuration = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Configuration ' });
