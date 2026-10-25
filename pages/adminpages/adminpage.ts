@@ -10,26 +10,27 @@ export class AdminPage {
     readonly nationalities: Locator;
     readonly corporatebranding: Locator;
     readonly configuration: Locator;
+    
   
     constructor(page: Page) {
         this.page = page;
-        this.usermanagement = page.getByText('User Management', { exact: true });
-        this.job = page.getByText('Job', { exact: true });
-        this.organization = page.getByText('Organization', { exact: true });
-        this.qualifications = page.getByText('Qualifications', { exact: true });
-        this.nationalities = page.getByText('Nationalities', { exact: true });
-        this.corporatebranding = page.getByText('Corporate Branding', { exact: true });
-        this.configuration = page.getByText('Configuration', { exact: true });
+        this.usermanagement = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'User Management ' });
+        this.job = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Job ' });
+        this.organization = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Organization ' });
+        this.qualifications = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Qualifications ' });
+        this.nationalities = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Nationalities ' });
+        this.corporatebranding = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Corporate Branding ' });
+        this.configuration = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Configuration ' });
     }
 async getWelcomeMessage() {
     return await this.page.getByRole('heading', { name: 'Dashboard' }).textContent();
 }
 
-    async goToUserManagementPage() {
+    async goToUserManagementPage() : Promise<void> {
         await this.usermanagement.click();
     };
 
-    async goToJobPage() {
+    async goToJobPage() : Promise<void> {
         await this.job.click();
     };
 
@@ -37,19 +38,19 @@ async getWelcomeMessage() {
         await this.organization.click();
     };
 
-    async goToQualificationsPage() {
+    async goToQualificationsPage() : Promise<void> {
         await this.qualifications.click();
     };
 
-    async goToNationalitiesPage() {
+    async goToNationalitiesPage() : Promise<void> {
         await this.nationalities.click();
     };
 
-    async goToCorporateBrandingPage() {
+    async goToCorporateBrandingPage() : Promise<void> {
         await this.corporatebranding.click();
     };
 
-    async goToConfigurationPage() {
+    async goToConfigurationPage() : Promise<void> {
         await this.configuration.click();
     };
 }
