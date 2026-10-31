@@ -14,7 +14,6 @@ export class RecruitmentPage {
         this.page = page;
         this.candidates = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Candidates' });
         this.vacancies = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Vacancies' });
-       
 
     }
 async getWelcomeMessage() {

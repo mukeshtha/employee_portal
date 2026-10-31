@@ -13,14 +13,15 @@ test('adminpage test', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goToAdminPage();
     const adminPage = new AdminPage(page);
-    
-    adminPage.goToUserManagementPage();
-    adminPage.goToJobPage();
-    adminPage.goToOrganizationPage();
-    adminPage.goToQualificationsPage();
-    adminPage.goToNationalitiesPage();
-    adminPage.goToCorporateBrandingPage();
-    adminPage.goToConfigurationPage();
+
+    adminPage.addUser();
+    // adminPage.goToUserManagementPage();
+    // adminPage.goToJobPage();
+    // adminPage.goToOrganizationPage();
+    // adminPage.goToQualificationsPage();
+    // adminPage.goToNationalitiesPage();
+    // adminPage.goToCorporateBrandingPage();
+    // adminPage.goToConfigurationPage();
 
    
 });

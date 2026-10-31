@@ -10,6 +10,7 @@ export class AdminPage {
     readonly nationalities: Locator;
     readonly corporatebranding: Locator;
     readonly configuration: Locator;
+    readonly adduser: Locator;
     
   
     constructor(page: Page) {
@@ -21,11 +22,15 @@ export class AdminPage {
         this.nationalities = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Nationalities ' });
         this.corporatebranding = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Corporate Branding ' });
         this.configuration = page.locator('.oxd-topbar-body-nav-tab-item').filter({ hasText: 'Configuration ' });
+        this.adduser = page.getByRole('button', { name: 'Add' });
     }
 async getWelcomeMessage() {
     return await this.page.getByRole('heading', { name: 'Dashboard' }).textContent();
 }
 
+async addUser() : Promise<void> {
+    await this.adduser.click();
+}
     async goToUserManagementPage() : Promise<void> {
         await this.usermanagement.click();
     };

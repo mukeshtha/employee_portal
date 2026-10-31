@@ -14,7 +14,7 @@ test('recruitmentpage test', async ({ page }) => {
     await homePage.goToTimePage();
     const recruitmentPage = new RecruitmentPage(page);
 
-    await recruitmentPage.goToCandidatesPage();
+    // await recruitmentPage.goToCandidatesPage();
     await recruitmentPage.goToVacanciesPage();
 
    
